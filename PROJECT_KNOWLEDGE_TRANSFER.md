@@ -84,6 +84,7 @@ Useful scripts:
 | `public/hrms-video-poster.png` | Walkthrough/video poster |
 | `vite.config.ts` | Vinext, Sites, and Cloudflare Vite configuration |
 | `package.json` | Scripts and dependencies |
+| `public/renew-upgrade/` | Self-contained Renew & Upgrade feature linked from the profile menu and deployed with the main Vercel site |
 
 ## 6. Application shell
 
@@ -104,6 +105,8 @@ The main page contains:
 3. “Edit landing page” and “New plan” actions.
 4. Four summary cards: total plans, published plans, active modules, and most popular plan.
 5. Tabs for Plans & pricing, Module access, and Landing page.
+
+The profile block at the bottom of the sidebar opens an account menu. Its **Renew & upgrade** item opens `/renew-upgrade/`, a customer-facing billing workspace for invoices, renewals, plan upgrades, add-on purchases, and demo checkout.
 
 ## 7. Core data model
 
@@ -500,13 +503,17 @@ A recreation is functionally equivalent when all of the following are true:
 - [ ] State survives refresh through the documented localStorage keys.
 - [ ] `npm run build` succeeds.
 
-## 20. Prompt for another coding model
+## 20. Change log
+
+- 2026-10-17: Added the profile-menu Renew & Upgrade feature at `/renew-upgrade/`, including invoice history, renewal and upgrade checkout, add-on selection, local demo persistence, and Vercel-compatible static delivery.
+
+## 21. Prompt for another coding model
 
 Copy the prompt below together with this document when rebuilding elsewhere:
 
 > Build the HRMS Subscription Admin exactly as specified in `PROJECT_KNOWLEDGE_TRANSFER.md`. Treat that document as the product and UI source of truth. Implement all acceptance-checklist items, preserve the exact plan table column order, use a compact right-side membership drawer, maintain separate monthly/annual pricing and module mappings, and persist prototype state with the documented localStorage keys. Use TypeScript and React. Match the documented responsive behavior and visual system. Do not add an Add module button or module pricing column. Run the production build and fix all errors before completion.
 
-## 21. Recommended production evolution
+## 22. Recommended production evolution
 
 When moving beyond the prototype:
 

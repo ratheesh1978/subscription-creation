@@ -1,0 +1,635 @@
+/* Subscription, upgrade and module purchase screens. */
+
+/* ---------- Invoices ---------- */
+
+.invoice-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.invoice-number__download {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--blue-600);
+}
+
+.invoice-number__download:hover {
+  background: var(--blue-50);
+}
+
+/* ---------- Current subscription ---------- */
+
+.sub-hero {
+  display: grid;
+  grid-template-columns: minmax(290px, 1.25fr) minmax(170px, 0.7fr) minmax(260px, 1fr) auto;
+  align-items: center;
+  gap: 0;
+}
+
+.sub-hero > * {
+  min-width: 0;
+}
+
+.sub-hero__plan,
+.sub-hero__renewal,
+.sub-hero__payment {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2px 24px;
+  border-right: 1px solid var(--line-200);
+}
+
+.sub-hero__plan {
+  padding-left: 0;
+}
+
+.sub-hero__name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sub-hero__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.sub-hero__amount {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.sub-hero__per {
+  font-size: 14px;
+  color: var(--ink-500);
+}
+
+.sub-hero__cycle {
+  font-size: 13px;
+  color: var(--ink-500);
+}
+
+.sub-hero__cycle::before {
+  content: '\00B7';
+  margin-right: 8px;
+  font-size: 15px;
+  color: var(--ink-400);
+}
+
+.sub-hero__label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin-bottom: 8px;
+}
+
+.renew-panel__date {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 5px;
+}
+
+.renew-panel__when {
+  font-size: 13px;
+  color: var(--ink-500);
+  margin-top: 2px;
+}
+
+.renew-panel__when.is-warning {
+  color: var(--amber-700);
+  font-weight: 600;
+}
+
+.renew-panel__paid {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.renew-panel__method {
+  font-weight: 500;
+  color: var(--ink-500);
+}
+
+.renew-panel__meta {
+  font-size: 12.5px;
+  color: var(--ink-500);
+  margin-top: 2px;
+}
+
+.renew-panel__file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 9px;
+  padding: 7px 10px;
+  border: 1px solid var(--line-200);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--ink-700);
+  text-align: left;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+
+.sub-hero__actions {
+  display: grid;
+  gap: 8px;
+  padding-left: 24px;
+}
+
+.sub-hero__actions .btn {
+  white-space: nowrap;
+}
+
+.renew-panel__file:hover {
+  border-color: var(--blue-600);
+  color: var(--blue-700);
+}
+
+.renew-panel__file-cta {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: var(--blue-700);
+}
+
+/* ---------- Upgrade plan cards ---------- */
+
+.plan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--line-200);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  text-align: center;
+}
+
+.plan-card__name {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.plan-card__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.plan-card__amount {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.plan-card__per {
+  font-size: 13px;
+  color: var(--ink-500);
+}
+
+.plan-card__gst {
+  align-self: center;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  color: var(--blue-700);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.plan-card__employees {
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.plan-card__desc {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-500);
+}
+
+.plan-card__features {
+  flex: 1 1 auto;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line-100);
+  text-align: left;
+}
+
+.plan-card__features li {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+
+.plan-card__tick {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--green-50);
+  color: var(--green-600);
+  display: grid;
+  place-items: center;
+}
+
+.plan-card__best {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-700);
+}
+
+.plan-card__best strong {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+.plan-card__cta {
+  margin-top: auto;
+}
+
+/* ---------- Add modules ---------- */
+
+.module-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.module-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line-100);
+}
+
+.module-row.is-active {
+  background: var(--surface-muted);
+}
+
+.module-row__main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.module-row__select-spacer {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.module-row__name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.module-row__desc {
+  margin-top: 3px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-500);
+}
+
+.module-row__price {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.module-row__aside {
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.module-list__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: var(--surface-muted);
+  border-top: 1px solid var(--line-200);
+}
+
+/* ---------- Billing term (order dialog) ---------- */
+
+.duration-control {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.duration-input {
+  width: 120px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-300);
+  background: var(--surface);
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.duration-input:focus {
+  outline: 3px solid var(--blue-50);
+  border-color: var(--blue-600);
+}
+
+.duration-unit {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line-300);
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+}
+
+.duration-unit__option {
+  min-width: 88px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink-600);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.duration-unit__option.is-active {
+  background: var(--surface);
+  color: var(--blue-700);
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.12);
+}
+
+.duration-error {
+  margin-top: 7px;
+  color: var(--red-600);
+  font-size: 12px;
+}
+
+/* ---------- Order dialog ---------- */
+
+.pay-methods {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pay-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+}
+
+.pay-method:hover {
+  border-color: var(--line-300);
+}
+
+.pay-method.is-active {
+  border-color: var(--blue-600);
+  background: var(--blue-50);
+}
+
+.pay-method__label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pay-method__hint {
+  font-size: 12px;
+  color: var(--ink-500);
+}
+
+.radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-300);
+  display: grid;
+  place-items: center;
+  flex: 0 0 18px;
+}
+
+.pay-method.is-active .radio {
+  border-color: var(--blue-600);
+}
+
+.pay-method.is-active .radio::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--blue-600);
+}
+
+.confirm-list {
+  border: 1px solid var(--line-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.confirm-list__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line-100);
+}
+
+.confirm-list__row:last-child {
+  border-bottom: none;
+}
+
+.confirm-list__row--total {
+  background: var(--surface-muted);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.summary__note {
+  font-size: 12px;
+  color: var(--ink-500);
+  margin-top: 12px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.summary__note::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink-400);
+}
+
+/* ---------- Payment receipt ---------- */
+
+.receipt {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.receipt__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--green-50);
+  color: var(--green-600);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+}
+
+.receipt__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.receipt__amount {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.receipt__meta {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--ink-500);
+}
+
+@media (max-width: 1200px) {
+  .sub-hero {
+    grid-template-columns: minmax(260px, 1.15fr) minmax(170px, 0.75fr) minmax(230px, 1fr);
+    row-gap: 20px;
+  }
+
+  .sub-hero__payment {
+    border-right: 0;
+  }
+
+  .sub-hero__actions {
+    grid-column: 1 / -1;
+    display: flex;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--line-100);
+  }
+}
+
+@media (max-width: 900px) {
+  .sub-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sub-hero__payment {
+    padding-top: 18px;
+    border-top: 1px solid var(--line-100);
+  }
+
+  .sub-hero__payment {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .sub-hero {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .sub-hero__plan,
+  .sub-hero__renewal,
+  .sub-hero__payment {
+    padding: 16px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line-100);
+  }
+
+  .sub-hero__plan {
+    padding-top: 0;
+  }
+
+  .sub-hero__renewal,
+  .sub-hero__payment {
+    border-top: 0;
+  }
+
+  .sub-hero__actions {
+    padding-top: 16px;
+  }
+
+  .plan-card {
+    padding: 18px 16px;
+  }
+}

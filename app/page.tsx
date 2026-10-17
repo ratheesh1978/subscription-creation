@@ -44,6 +44,7 @@ export default function Home() {
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [mobileNav, setMobileNav] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const [heroTitle, setHeroTitle] = useState("Simple HRMS pricing that grows with your team");
   const [heroCopy, setHeroCopy] = useState("Choose the right plan for your people operations. All plans are billed annually.");
   const [announcement, setAnnouncement] = useState("Save 15% with annual billing");
@@ -157,7 +158,7 @@ export default function Home() {
         <a href="#" title="Recruitment"><UserSearch /><span>Recruitment</span></a>
         <a className="active" href="#" title="Subscription"><CreditCard /><span>Subscription</span></a>
       </nav>
-      <div className="side-bottom"><a href="#"><Settings /><span>Settings</span></a><a href="#"><CircleHelp /><span>Help & support</span></a><div className="profile"><b>AK</b><span><strong>Arun Kumar</strong><small>Super admin</small></span><MoreHorizontal /></div></div>
+      <div className="side-bottom"><a href="#"><Settings /><span>Settings</span></a><a href="#"><CircleHelp /><span>Help & support</span></a><div className="profile-menu-wrap"><button className="profile" type="button" aria-haspopup="menu" aria-expanded={profileOpen} onClick={() => setProfileOpen((open) => !open)}><b>AK</b><span><strong>Arun Kumar</strong><small>Super admin</small></span><MoreHorizontal /></button>{profileOpen && <div className="profile-menu-panel" role="menu"><a href="/renew-upgrade/" role="menuitem"><CreditCard /><span><strong>Renew & upgrade</strong><small>Billing, add-ons and invoices</small></span></a></div>}</div></div>
     </aside>
     <main>
       {tab !== "builder" && <header className="topbar"><button className="menu" onClick={() => setMobileNav(true)}><Menu /></button><div className="top-actions"><Bell /><b>AK</b><ChevronDown /></div></header>}

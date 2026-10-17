@@ -47,6 +47,7 @@
 .repeat-card>header button{display:grid;width:26px;height:26px;place-items:center;border:0;border-radius:5px;background:none;color:#d34646;cursor:pointer}
 .repeat-card>header button:hover{background:#feecec}
 .repeat-card>header svg{width:14px}
+.profile-menu-wrap{position:relative}.profile-menu-wrap>.profile{width:100%;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}.profile-menu-panel{position:absolute;right:0;bottom:66px;left:0;z-index:50;padding:7px;border:1px solid #2a3d59;border-radius:9px;background:#12233c;box-shadow:0 14px 35px #02081766}.profile-menu-panel a{display:flex;min-height:54px;align-items:center;gap:10px;padding:8px 10px;border-radius:7px;color:#eef4ff;text-decoration:none}.profile-menu-panel a:hover{background:#1d3557}.profile-menu-panel svg{flex:0 0 18px;width:18px;color:#75a7ff}.profile-menu-panel strong,.profile-menu-panel small{display:block}.profile-menu-panel strong{font-size:12px}.profile-menu-panel small{margin-top:3px;color:#9db0ca;font-size:10px}.sidebar-collapsed .profile-menu-panel{left:58px;right:auto;bottom:0;width:220px}.sidebar-collapsed .profile-menu-panel span{display:block}
 .repeat-card textarea{min-height:66px}
 .landing-page-preview>[data-preview-section]{scroll-margin-top:10px}
 .lp-faq details{margin-top:8px;padding:10px;border:1px solid #dde4ee;border-radius:8px}
